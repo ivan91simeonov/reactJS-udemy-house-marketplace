@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { toast } from 'react-toastify';
 import { Link, useNavigate } from 'react-router-dom';
-import { getAuth , signInWithEmailAndPassword } from 'firebase/auth';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import { ReactComponent as ArrowRightIcon } from '../assets/svg/keyboardArrowRightIcon.svg';
 import visibilityIcon from '../assets/svg/visibilityIcon.svg';
 
@@ -17,28 +17,31 @@ function SignIn() {
   const navigate = useNavigate();
 
   const onChange = (e) => {
-      setFormData((prevState) =>({
-          ...prevState ,
-          [e.target.id]: e.target.value
-      }))
+    setFormData((prevState) => ({
+      ...prevState,
+      [e.target.id]: e.target.value
+    }));
   };
 
   const onSubmit = async (e) => {
-      e.preventDefault() 
+    e.preventDefault();
 
-      try {
-        const auth = getAuth(); 
+    try {
+      const auth = getAuth();
 
-        const userCredential = await signInWithEmailAndPassword (auth , email , password );
-  
-        if(userCredential.user) {
-            navigate('/')
-        }
-      }catch (err) {
-          toast.error('Bad User Credentials')
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+
+      if (userCredential.user) {
+        navigate('/');
       }
-     
-  }
+    } catch (err) {
+      toast.error('Bad User Credentials');
+    }
+  };
 
   return (
     <>
@@ -77,17 +80,15 @@ function SignIn() {
             </Link>
 
             <div className="signInBar">
-              <p className="signInText">
-                  Sign In 
-                  </p>  
-                  <button className="signInButton">
-                      <ArrowRightIcon fill='#ffffff' windth='34px' height='34px' />
-                  </button>
+              <p className="signInText">Sign In</p>
+              <button className="signInButton">
+                <ArrowRightIcon fill="#ffffff" windth="34px" height="34px" />
+              </button>
             </div>
           </form>
           {/* Google OAuth */}
-          <Link to='/sign-up' className='registerLink' >
-              Sign Up Instead
+          <Link to="/sign-up" className="registerLink">
+            Sign Up Instead
           </Link>
         </main>
       </div>
