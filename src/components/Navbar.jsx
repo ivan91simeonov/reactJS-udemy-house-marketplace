@@ -12,7 +12,7 @@ function Navbar() {
       return true;
     }
   };
-u
+
   return (
     <footer className="navbar">
       <nav className="navbarNav">
