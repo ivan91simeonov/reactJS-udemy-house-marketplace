@@ -8,7 +8,7 @@ import visibilityIcon from '../assets/svg/visibilityIcon.svg';
 function SignIn() {
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
-    emaail: '',
+    email: '',
     password: ''
   });
 
@@ -82,7 +82,7 @@ function SignIn() {
             <div className="signInBar">
               <p className="signInText">Sign In</p>
               <button className="signInButton">
-                <ArrowRightIcon fill="#ffffff" windth="34px" height="34px" />
+                <ArrowRightIcon fill="#ffffff" width="34px" height="34px" />
               </button>
             </div>
           </form>

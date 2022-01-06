@@ -56,7 +56,7 @@ function SignUn() {
 
       navigate('/');
     } catch (err) {
-      toast.error('Someting went wrong with registration ');
+      toast.error('Something went wrong with registration ');
     }
   };
 
@@ -107,7 +107,7 @@ function SignUn() {
             <div className="signUpBar">
               <p className="signUpText">Sign Un</p>
               <button className="signUpButton">
-                <ArrowRightIcon fill="#ffffff" windth="34px" height="34px" />
+                <ArrowRightIcon fill="#ffffff" width="34px" height="34px" />
               </button>
             </div>
           </form>
